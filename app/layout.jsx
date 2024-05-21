@@ -4,7 +4,6 @@ import './globals.css';
 import { cn } from "@/lib/utils"
 import NavBar from '../components/NavBar';
 import { Container } from 'reactstrap';
-import Footer from '../components/Footer';
 import React from 'react';
 import { UserProvider } from '@auth0/nextjs-auth0/client';
 import { Inter as FontSans } from "next/font/google"
@@ -33,7 +32,6 @@ export default function RootLayout({ children }) {
           <main id="app" className="d-flex flex-column h-100" data-testid="layout">
             <NavBar />
             <Container className="flex-grow-1 mt-5">{children}</Container>
-            <Footer />
           </main>
         </UserProvider>
       </body>

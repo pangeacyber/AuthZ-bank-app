@@ -40,13 +40,13 @@ const NavBar = () => {
               {user && (
                 <>
                   <NavItem>
-                    <PageLink href="/csr" className="nav-link" testId="navbar-csr">
+                    <PageLink href="/deathstar" className="nav-link" testId="navbar-csr">
                       Deathstar
                     </PageLink>
                   </NavItem>
                   <NavItem>
-                    <PageLink href="/ssr" className="nav-link" testId="navbar-ssr">
-                      Server-side rendered page
+                    <PageLink href="/hangar" className="nav-link" testId="navbar-ssr">
+                      Hangar 157
                     </PageLink>
                   </NavItem>
                   <NavItem>

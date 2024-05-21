@@ -4,7 +4,7 @@ import React from 'react';
 import { withPageAuthRequired } from '@auth0/nextjs-auth0/client';
 import { Deathstar } from '@/components/Deathstar';
 
-export default withPageAuthRequired(function CSRPage() {
+export default withPageAuthRequired(function DeathStarDashboardPage() {
   return (
     <>
       <div className="mb-5" data-testid="csr">
