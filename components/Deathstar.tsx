@@ -34,11 +34,8 @@ export function Deathstar() {
             alt="Deathstar Map"
             className="w-full h-auto rounded-lg"
             height={800}
-            src="/placeholder.svg"
-            style={{
-              aspectRatio: "1200/800",
-              objectFit: "cover",
-            }}
+            src="deathstar-map.jpg"
+         
             width={1200}
           />
         </div>
