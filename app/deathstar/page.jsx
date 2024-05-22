@@ -1,10 +1,15 @@
-'use client';
-
 import React from 'react';
-import { withPageAuthRequired } from '@auth0/nextjs-auth0/client';
+import { getSession, withPageAuthRequired } from '@auth0/nextjs-auth0';
 import { Deathstar } from '@/components/Deathstar';
+import { checkRole } from '@/utils/pangeaAuthZ';
 
-export default withPageAuthRequired(function DeathStarDashboardPage() {
+export default withPageAuthRequired(async function DeathStarDashboardPage() {
+
+  const { user } = await getSession();
+  console.log(user)
+
+  await checkRole(user.sub, 'read', "ships")
+
   return (
     <>
       <div className="mb-5" data-testid="csr">
