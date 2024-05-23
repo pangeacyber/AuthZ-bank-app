@@ -1,21 +1,23 @@
 'use client';
 
 import React from 'react';
-import { Row, Col } from 'reactstrap';
+import { Row, Col, Input, Label} from 'reactstrap';
 import { useUser, withPageAuthRequired } from '@auth0/nextjs-auth0/client';
 
 import Loading from '../../components/Loading';
 import ErrorMessage from '../../components/ErrorMessage';
 import Highlight from '../../components/Highlight';
+import { Button } from '@/components/ui/button';
 
 function Profile() {
   const { user, isLoading } = useUser();
 
   return (
-    <>
+    <div className='w-full py-12 md:py-24 lg:py-32 bg-black text-white px-20'>
       {isLoading && <Loading />}
       {user && (
         <>
+        
           <Row className="align-items-center profile-header mb-5 text-center text-md-left" data-testid="profile">
             <Col md={2}>
               <img
@@ -33,12 +35,42 @@ function Profile() {
               </p>
             </Col>
           </Row>
-          <Row data-testid="profile-json">
+          <Row className="mb-5" data-testid="profile-json">
             <Highlight>{JSON.stringify(user, null, 2)}</Highlight>
+          </Row>
+          <Row className='mb-3'>
+            <h2 data-testid="profile-name">Change your access</h2>
+          </Row>
+          <Row className='w-full mb-3'>
+            <Input
+              type="select"
+              className='w-full text-black p-2'
+            >
+              <option>
+              crew_member
+              </option>
+              <option>
+                owner
+              </option>
+              <option>
+                pilot
+              </option>
+              <option>
+                stormtrooper
+              </option>
+              <option>
+                rebel
+              </option>
+            </Input>
+          </Row>
+          <Row>
+            <Button className='bg-[#900C3F]'>
+              Submit
+            </Button>
           </Row>
         </>
       )}
-    </>
+    </div>
   );
 }
 

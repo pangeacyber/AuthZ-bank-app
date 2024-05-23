@@ -10,7 +10,7 @@ export default withPageAuthRequired(
   
     return (
       <>
-        <div>
+        <div className='w-full py-8 md:py-24 lg:py-32 bg-black'>
           {authZ 
           ? <Hangar></Hangar>
           : <img src="deathstar-map.jpg"></img> 

@@ -12,7 +12,7 @@ export default withPageAuthRequired(async function DeathStarDashboardPage() {
 
   return (
     <>
-      <div className="mb-5" data-testid="csr">
+      <div className="w-full py-12 md:py-24 lg:py-15 bg-black" data-testid="csr">
         <Deathstar></Deathstar>
       </div>
     </>

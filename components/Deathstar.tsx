@@ -31,7 +31,7 @@ import { Button } from "@/components/ui/button"
 export function Deathstar() {
   return (
     <div className="flex flex-col w-full min-h-screen bg-[#0b0b0b] text-[#f1f1f1]">
-      <main className="flex-1 p-6">
+      <main className="flex-1 px-5">
         <div className="mt-6">
           <img
             alt="Deathstar Map"
