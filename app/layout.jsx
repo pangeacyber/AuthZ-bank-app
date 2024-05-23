@@ -29,9 +29,9 @@ export default function RootLayout({ children }) {
           "min-h-screen bg-background font-sans antialiased",
           fontSans.variable)}>
         <UserProvider>
-          <main id="app" className="d-flex flex-column h-100" data-testid="layout">
+          <main id="app"  data-testid="layout">
             <NavBar />
-            <Container className="flex-grow-1 mt-5">{children}</Container>
+            {children}
           </main>
         </UserProvider>
       </body>

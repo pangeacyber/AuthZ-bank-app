@@ -23,6 +23,9 @@ To read more about using these font, please visit the Next.js documentation:
 - App Directory: https://nextjs.org/docs/app/building-your-application/optimizing/fonts
 - Pages Directory: https://nextjs.org/docs/pages/building-your-application/optimizing/fonts
 **/
+import { CardTitle, CardHeader, CardContent, Card } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+
 
 
 export function Deathstar() {
@@ -40,7 +43,7 @@ export function Deathstar() {
           />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="bg-[#1a1a1a] rounded-lg shadow p-4">
+          <div className="rounded-lg border shadow p-4">
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="text-lg font-bold text-[#ffd700]">TIE Fighters</h2>
@@ -49,7 +52,7 @@ export function Deathstar() {
               <SpaceIcon className="w-12 h-12 text-[#9b9b9b]" />
             </div>
           </div>
-          <div className="bg-[#1a1a1a] rounded-lg shadow p-4">
+          <div className="rounded-lg border shadow p-4">
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="text-lg font-bold text-[#ffd700]">Stormtroopers</h2>
@@ -58,7 +61,7 @@ export function Deathstar() {
               <ShieldIcon className="w-12 h-12 text-[#9b9b9b]" />
             </div>
           </div>
-          <div className="bg-[#1a1a1a] rounded-lg shadow p-4">
+          <div className="rounded-lg border shadow p-4">
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="text-lg font-bold text-[#ffd700]">Energy Remaining</h2>
@@ -67,7 +70,7 @@ export function Deathstar() {
               <BatteryIcon className="w-12 h-12 text-[#9b9b9b]" />
             </div>
           </div>
-          <div className="bg-[#1a1a1a] rounded-lg shadow p-4">
+          <div className="rounded-lg border shadow p-4">
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="text-lg font-bold text-[#ffd700]">Main Weapon Status</h2>
@@ -76,7 +79,7 @@ export function Deathstar() {
               <LaptopIcon className="w-12 h-12 text-[#9b9b9b]" />
             </div>
           </div>
-          <div className="bg-[#1a1a1a] rounded-lg shadow p-4">
+          <div className="rounded-lg border shadow p-4">
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="text-lg font-bold text-[#ffd700]">Rebel Scum Captured</h2>
@@ -85,7 +88,7 @@ export function Deathstar() {
               <HandIcon className="w-12 h-12 text-[#9b9b9b]" />
             </div>
           </div>
-          <div className="bg-[#1a1a1a] rounded-lg shadow p-4">
+          <div className="rounded-lg border shadow p-4">
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="text-lg font-bold text-[#ffd700]">Proton Torpedoes</h2>
@@ -94,7 +97,7 @@ export function Deathstar() {
               <RocketIcon className="w-12 h-12 text-[#9b9b9b]" />
             </div>
           </div>
-          <div className="bg-[#1a1a1a] rounded-lg shadow p-4">
+          <div className="rounded-lg border shadow p-4">
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="text-lg font-bold text-[#ffd700]">Deflector Shield</h2>
@@ -103,7 +106,7 @@ export function Deathstar() {
               <ShieldIcon className="w-12 h-12 text-[#9b9b9b]" />
             </div>
           </div>
-          <div className="bg-[#1a1a1a] rounded-lg shadow p-4">
+          <div className="rounded-lg border shadow p-4">
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="text-lg font-bold text-[#ffd700]">Tractor Beam</h2>

@@ -25,32 +25,39 @@ const NavBar = () => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div className="nav-container" data-testid="navbar">
-      <Navbar color="light" light expand="md">
-        <Container>
-          <NavbarBrand className="logo" />
+    <div>
+      <Navbar 
+        expand="sm"
+        className="p-0"
+        dark
+        color='secondary'
+        fixed='top'
+      >
+        <NavbarBrand>
+          <img src="EmpireLogo.png" className='h-12 w-12'/>
+        </NavbarBrand>
           <NavbarToggler onClick={toggle} data-testid="navbar-toggle" />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar data-testid="navbar-items">
-              <NavItem>
-                <PageLink href="/" className="nav-link" testId="navbar-home">
-                  Home
-                </PageLink>
-              </NavItem>
               {user && (
                 <>
                   <NavItem>
-                    <PageLink href="/deathstar" className="nav-link" testId="navbar-csr">
+                    <PageLink href="/command" className="nav-link">
+                      Command Center
+                    </PageLink>
+                  </NavItem>
+                  <NavItem>
+                    <PageLink href="/deathstar" className="nav-link">
                       Deathstar
                     </PageLink>
                   </NavItem>
                   <NavItem>
-                    <PageLink href="/hangar" className="nav-link" testId="navbar-ssr">
-                      Hangar 157
+                    <PageLink href="/hangar" className="nav-link">
+                      Hangar Bay
                     </PageLink>
                   </NavItem>
                   <NavItem>
-                    <PageLink href="/external" className="nav-link" testId="navbar-external">
+                    <PageLink href="/external" className="nav-link">
                       External API
                     </PageLink>
                   </NavItem>
@@ -70,16 +77,17 @@ const NavBar = () => {
                 </NavItem>
               )}
               {user && (
-                <UncontrolledDropdown nav inNavbar data-testid="navbar-menu-desktop">
+                <UncontrolledDropdown nav inNavbar data-testid="navbar-menu-desktop" className='pt-2 flex-row'>
                   <DropdownToggle nav caret id="profileDropDown">
                     <img
                       src={user.picture}
                       alt="Profile"
                       className="nav-user-profile rounded-circle"
-                      width="50"
-                      height="50"
+                      width="40"
+                      height="40"
                       decode="async"
                       data-testid="navbar-picture-desktop"
+  
                     />
                   </DropdownToggle>
                   <DropdownMenu>
@@ -150,7 +158,6 @@ const NavBar = () => {
               </Nav>
             )}
           </Collapse>
-        </Container>
       </Navbar>
     </div>
   );

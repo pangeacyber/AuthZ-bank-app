@@ -1,13 +1,13 @@
 'use client';
 
 import React from 'react';
+import Land from "../components/Land";
 
-import Hero from '../components/Hero';
 
 export default function Index() {
   return (
     <>
-      <Hero />
+      <Land/>      
       <hr />
     </>
   );
