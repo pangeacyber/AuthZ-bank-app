@@ -9,15 +9,58 @@ import ErrorMessage from '../../components/ErrorMessage';
 import Highlight from '../../components/Highlight';
 import { Button } from '@/components/ui/button';
 
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer"
+import { Toaster } from '@/components/ui/toaster';
+import { toast } from '@/components/ui/use-toast';
+
 function Profile() {
+  const [role, setRole] = React.useState('');
   const { user, isLoading } = useUser();
+
+  const onUpdateRole = async () => {
+    // send POST API request to /api/authz
+    fetch('/api/authz', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        'user_id': user.sub,
+        'role': 'crew_member',
+        'resource_type': 'ships', 
+        'resource_id': 'deathstar'
+      }),
+    })
+      .then(response => response.json())
+      .then(data => {
+        toast({
+          title: 'Role updated',
+          description: `User role updated to`
+        })
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        toast({
+          title: 'Error updating Role',
+          description: `Not updated. Error ${error}`
+        })
+    });
+  }
 
   return (
     <div className='w-full py-12 md:py-24 lg:py-32 bg-black text-white px-20'>
       {isLoading && <Loading />}
       {user && (
         <>
-        
           <Row className="align-items-center profile-header mb-5 text-center text-md-left" data-testid="profile">
             <Col md={2}>
               <img
@@ -46,28 +89,29 @@ function Profile() {
               type="select"
               className='w-full text-black p-2'
             >
-              <option>
+              <option onSelect={e => {setRole(e.target.value); console.log(e.target.value)}} value="crew_member">
               crew_member
               </option>
-              <option>
+              <option onChange={e => {setRole(e.target.value)}} value="owner">
                 owner
               </option>
-              <option>
+              <option onChange={e => {setRole(e.target)}} value="pilot">
                 pilot
               </option>
-              <option>
+              <option  onChange={e => {setRole(e.target)}} value="stormtrooper">
                 stormtrooper
               </option>
-              <option>
+              {/* <option>
                 rebel
-              </option>
+              </option> */}
             </Input>
           </Row>
           <Row>
-            <Button className='bg-[#900C3F]'>
+            <Button className='bg-[#900C3F]' onClick={onUpdateRole}>
               Submit
             </Button>
           </Row>
+          <Toaster />
         </>
       )}
     </div>

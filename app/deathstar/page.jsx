@@ -2,19 +2,24 @@ import React from 'react';
 import { getSession, withPageAuthRequired } from '@auth0/nextjs-auth0';
 import { Deathstar } from '@/components/Deathstar';
 import { checkRole } from '@/utils/pangeaAuthZ';
+import { AccessDenied } from '@/components/AccessDenied';
 
 export default withPageAuthRequired(async function DeathStarDashboardPage() {
 
   const { user } = await getSession();
   console.log(user)
 
-  await checkRole(user.sub, 'read', "ships")
+  const roleCheckStatus = await checkRole(user.sub, 'read', "ships");
+  const authZCheck = roleCheckStatus.allowed;
 
   return (
     <>
+    {authZCheck ?
       <div className="w-full py-12 md:py-24 lg:py-15 bg-black" data-testid="csr">
         <Deathstar></Deathstar>
       </div>
+    : <AccessDenied />
+  }
     </>
   );
 });

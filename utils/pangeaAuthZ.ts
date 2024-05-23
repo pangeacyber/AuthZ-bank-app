@@ -22,7 +22,7 @@ const assignRole = async (userId: string, role: RoleTypes, resource: AuthZ.Resou
 
     console.log(response);
 
-    return response.result;
+    return response.summary;
 }
 
 const checkRole = async (userId: string, action: string, resource: string) => {

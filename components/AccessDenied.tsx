@@ -31,10 +31,11 @@ export function AccessDenied() {
       </div>
       <Link
         className="inline-flex h-10 items-center justify-center rounded-md bg-red-500 px-6 text-sm font-medium text-white shadow transition-colors hover:bg-red-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-red-600 disabled:pointer-events-none disabled:opacity-50 dark:bg-red-600 dark:hover:bg-red-700 dark:focus-visible:ring-red-700"
-        href="#"
+        href="/"
       >
         Go Back
       </Link>
+      <div className="w-full h-40 relative"><iframe src="https://giphy.com/embed/xTiIzPbiiuTeaJ9U3u" width="100%" height="100%" className="giphy-embed absolute border-0" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/starwars-movie-star-wars-xTiIzPbiiuTeaJ9U3u">via GIPHY</a></p>
     </div>
   )
 }
