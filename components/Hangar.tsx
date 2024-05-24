@@ -24,7 +24,7 @@ import { Button } from "@/components/ui/button"
 export function Hangar() {
   return (
     
-    <main className="flex flex-col w-full min-h-screen bg-[#0b0b0b] text-[#f1f1f1]">
+    <main className="flex flex-col w-full min-h-screen text-[#f1f1f1]">
       <div>
         <div className="relative">
           <img alt="Banner" className="object-cover" src="hangar.gif" />

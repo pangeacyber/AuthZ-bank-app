@@ -8,17 +8,6 @@ import Loading from '../../components/Loading';
 import ErrorMessage from '../../components/ErrorMessage';
 import Highlight from '../../components/Highlight';
 import { Button } from '@/components/ui/button';
-
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer"
 import { Toaster } from '@/components/ui/toaster';
 import { toast } from '@/components/ui/use-toast';
 
@@ -82,34 +71,10 @@ function Profile() {
             <Highlight>{JSON.stringify(user, null, 2)}</Highlight>
           </Row>
           <Row className='mb-3'>
-            <h2 data-testid="profile-name">Change your access</h2>
+            <h2 data-testid="profile-name"> Your access level is</h2>
           </Row>
           <Row className='w-full mb-3'>
-            <Input
-              type="select"
-              className='w-full text-black p-2'
-            >
-              <option onSelect={e => {setRole(e.target.value); console.log(e.target.value)}} value="crew_member">
-              crew_member
-              </option>
-              <option onChange={e => {setRole(e.target.value)}} value="owner">
-                owner
-              </option>
-              <option onChange={e => {setRole(e.target)}} value="pilot">
-                pilot
-              </option>
-              <option  onChange={e => {setRole(e.target)}} value="stormtrooper">
-                stormtrooper
-              </option>
-              {/* <option>
-                rebel
-              </option> */}
-            </Input>
-          </Row>
-          <Row>
-            <Button className='bg-[#900C3F]' onClick={onUpdateRole}>
-              Submit
-            </Button>
+           {role}
           </Row>
           <Toaster />
         </>

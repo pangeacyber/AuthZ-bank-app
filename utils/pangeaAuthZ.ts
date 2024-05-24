@@ -25,12 +25,14 @@ const assignRole = async (userId: string, role: RoleTypes, resource: AuthZ.Resou
     return response.summary;
 }
 
-const checkRole = async (userId: string, action: string, resource: string) => {
+const checkRole = async (userId: string, action: string, resource: string, page: string) => {
     try {
         const authz = new AuthZService(token, config);
+        console.log("Token" + token);
+        console.log("Config" + config.domain);
 
         const response = await authz.check({
-            resource: {type: resource},
+            resource: {type: resource, id: page },
             action: action,
             subject: { type: 'user', id: userId },
         });
@@ -44,4 +46,25 @@ const checkRole = async (userId: string, action: string, resource: string) => {
     }
 }
 
-export { assignRole, checkRole };
+const getRole = async (userId: string)=> {
+    const authz = new AuthZService(token, config);
+    try {
+        const response = await authz.tupleList({
+            filter: {subject_id: userId},
+            size:10
+        })
+
+        if(response.result){
+            console.log(response.result.tuples)
+        }else{
+            console.log("No response")
+
+        }
+    } catch (error) {
+        console.error("Get Role Error:" + error);
+        console.error(error.pangeaResponse)
+        return false;
+    }
+}
+
+export { assignRole, checkRole, getRole };

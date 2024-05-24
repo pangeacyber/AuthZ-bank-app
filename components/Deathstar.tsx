@@ -23,18 +23,15 @@ To read more about using these font, please visit the Next.js documentation:
 - App Directory: https://nextjs.org/docs/app/building-your-application/optimizing/fonts
 - Pages Directory: https://nextjs.org/docs/pages/building-your-application/optimizing/fonts
 **/
-import { CardTitle, CardHeader, CardContent, Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-
 
 
 export function Deathstar() {
   return (
-    <div className="flex flex-col w-full min-h-screen bg-[#0b0b0b] text-[#f1f1f1]">
+    <div className="flex flex-col w-full min-h-screen text-[#f1f1f1]">
       <main className="flex-1 px-5">
         <div className="mt-6">
           <img
-            alt="Deathstar Map"
+            alt="Map"
             className="w-full h-auto rounded-lg"
             height={800}
             src="deathstar-map.jpg"
