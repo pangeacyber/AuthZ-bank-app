@@ -29,12 +29,12 @@ const NavBar = () => {
       <Navbar 
         expand="sm"
         className="p-0"
+        color="dark"
         dark
-        color='secondary'
         fixed='top'
       >
         <NavbarBrand>
-          <img src="EmpireLogo.png" className='h-12 w-12'/>
+          <img src="Logo.png" className='h-12 w-12'/>
         </NavbarBrand>
           <NavbarToggler onClick={toggle} data-testid="navbar-toggle" />
           <Collapse isOpen={isOpen} navbar>
@@ -42,18 +42,18 @@ const NavBar = () => {
               {user && (
                 <>
                   <NavItem>
-                    <PageLink href="/command" className="nav-link">
-                      Command Center
+                    <PageLink href="/bankadmin" className="nav-link">
+                      Bank Admin
                     </PageLink>
                   </NavItem>
                   <NavItem>
-                    <PageLink href="/deathstar" className="nav-link">
-                      Deathstar
+                    <PageLink href="/bankteller" className="nav-link">
+                      Bank Teller
                     </PageLink>
                   </NavItem>
                   <NavItem>
-                    <PageLink href="/hangar" className="nav-link">
-                      Hangar Bay
+                    <PageLink href="/account" className="nav-link">
+                      My Account
                     </PageLink>
                   </NavItem>
                   <NavItem>
