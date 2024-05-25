@@ -10,7 +10,7 @@ export default withPageAuthRequired(async function DeathStarDashboardPage() {
   console.log(user)
   
 
-  const roleCheckStatus = await checkRole(user.sub, 'create', "bank", "pango");
+  const roleCheckStatus = await checkRole(user.sub, 'delete', "bank", "pango");
   const authZCheck = roleCheckStatus.allowed;
   //const authZCheck = true;
   
