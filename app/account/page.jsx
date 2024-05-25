@@ -9,7 +9,7 @@ export default withPageAuthRequired(
     const { user } = await getSession();
     console.log(user)
 
-    const roleCheckStatus = await checkRole(user.sub, "read", "areas", "hangar");
+    const roleCheckStatus = await checkRole(user.sub, "read", "account", "p-"+user.sub);
     console.log(roleCheckStatus);
     const authZCheck = roleCheckStatus.allowed;
   

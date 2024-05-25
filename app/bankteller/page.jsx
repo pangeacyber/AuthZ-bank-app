@@ -8,7 +8,7 @@ export default withPageAuthRequired(async function Command() {
   const { user } = await getSession();
   console.log(user)
 
-  await checkRole(user.sub, 'read', "ships")
+  await checkRole(user.sub, 'read','bank','pango' )
 
   return (
     <>

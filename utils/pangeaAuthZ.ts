@@ -54,12 +54,6 @@ const getRole = async (userId: string)=> {
             size:10
         })
 
-        if(response.result){
-            console.log(response.result.tuples)
-        }else{
-            console.log("No response")
-
-        }
     } catch (error) {
         console.error("Get Role Error:" + error);
         console.error(error.pangeaResponse)

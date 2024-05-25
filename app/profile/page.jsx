@@ -7,46 +7,14 @@ import { useUser, withPageAuthRequired } from '@auth0/nextjs-auth0/client';
 import Loading from '../../components/Loading';
 import ErrorMessage from '../../components/ErrorMessage';
 import Highlight from '../../components/Highlight';
-import { Button } from '@/components/ui/button';
 import { Toaster } from '@/components/ui/toaster';
 import { toast } from '@/components/ui/use-toast';
 
 function Profile() {
-  const [role, setRole] = React.useState('');
   const { user, isLoading } = useUser();
-
-  const onUpdateRole = async () => {
-    // send POST API request to /api/authz
-    fetch('/api/authz', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        'user_id': user.sub,
-        'role': 'crew_member',
-        'resource_type': 'ships', 
-        'resource_id': 'deathstar'
-      }),
-    })
-      .then(response => response.json())
-      .then(data => {
-        toast({
-          title: 'Role updated',
-          description: `User role updated to`
-        })
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-        toast({
-          title: 'Error updating Role',
-          description: `Not updated. Error ${error}`
-        })
-    });
-  }
-
+  
   return (
-    <div className='w-full py-12 md:py-24 lg:py-32 bg-black text-white px-20'>
+    <div className='w-full py-12 md:py-24 lg:py-32 px-20'>
       {isLoading && <Loading />}
       {user && (
         <>
@@ -73,9 +41,7 @@ function Profile() {
           <Row className='mb-3'>
             <h2 data-testid="profile-name"> Your access level is</h2>
           </Row>
-          <Row className='w-full mb-3'>
-           {role}
-          </Row>
+        
           <Toaster />
         </>
       )}
@@ -87,3 +53,34 @@ export default withPageAuthRequired(Profile, {
   onRedirecting: () => <Loading />,
   onError: error => <ErrorMessage>{error.message}</ErrorMessage>
 });
+
+
+/*const onUpdateRole = async () => {
+  // send POST API request to /api/authz
+  fetch('/api/authz', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      'user_id': user.sub,
+      'role': 'crew_member',
+      'resource_type': 'ships', 
+      'resource_id': 'deathstar'
+    }),
+  })
+    .then(response => response.json())
+    .then(data => {
+      toast({
+        title: 'Role updated',
+        description: `User role updated to`
+      })
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+      toast({
+        title: 'Error updating Role',
+        description: `Not updated. Error ${error}`
+      })
+  });
+*/
