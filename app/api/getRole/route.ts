@@ -1,11 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getRole } from '../../../utils/pangeaAuthZ';
 
-
 export const POST = async (req: NextRequest) => {
     const { user_id } = await req.json();
-    console.log({ user_id })
-
+    console.log(req)
+    
     // Assign role to user
     const allRoles = await getRole(user_id);
 

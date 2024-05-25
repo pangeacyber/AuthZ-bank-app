@@ -1,37 +1,36 @@
 
-import React, { useEffect } from 'react';
-import { getSession, withPageAuthRequired } from '@auth0/nextjs-auth0';
+
+export default async function CurrentAccess( userId: string) {
+    const stuff = GetRole(userId);
+    console.log(stuff);
+   
+    return (
+        <div>
+            <h2 data-testid="profile-name"> Your access level is</h2>
+
+            <p>{stuff ? `Your data: ${stuff}` : 'Loading...'}</p>
+
+        </div>
+    )  
+}
 
 
-export default withPageAuthRequired(async function CurrentAccess() {
-    const [data, setData] = React.useState('');
-    const { user } = await getSession();
+async function GetRole(userId: string) {
+    const mydata = fetch('/api/getRole', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        'user_id': userId,
+      }),
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+      })
+      .catch((error) => {
+        console.error('Error:', error);
 
-
-
-    useEffect(()=>{
-        const fetchData = async () => {
-        const response = await fetch('/api/getRole', {
-            method: 'POST',
-            headers: {
-            'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-            'user_id': user.sub
-            }),
-        })
-        if(!response){
-            throw new Error('HTTP ERROR! status: ${response.status}')
-        }
-        const result = await response.body;
-        setData(result)
-        }
-        fetchData().catch((e) => {
-            // handle the error as needed
-            console.error('An error occurred while fetching the data: ', e)
-        })
-        }, [])
-    
-        return <p>{data ? `Your data: ${data}` : 'Loading...'}</p>
-    }
-)
+    });
+}

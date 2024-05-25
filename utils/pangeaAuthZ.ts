@@ -28,8 +28,6 @@ const assignRole = async (userId: string, role: RoleTypes, resource: AuthZ.Resou
 const checkRole = async (userId: string, action: string, resource: string, page: string) => {
     try {
         const authz = new AuthZService(token, config);
-        console.log("Token" + token);
-        console.log("Config" + config.domain);
 
         const response = await authz.check({
             resource: {type: resource, id: page },

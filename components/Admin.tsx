@@ -22,7 +22,10 @@ import { Button } from "@/components/ui/button"
 import { DropdownMenuTrigger, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuItem, DropdownMenuContent, DropdownMenu } from "@/components/ui/dropdown-menu"
 import { TableHead, TableRow, TableHeader, TableCell, TableBody, Table } from "@/components/ui/table"
 
-export function Admin() {
+export function Admin({person}) {
+
+  console.log(person)
+
   return (
     <div className="grid min-h-screen w-full p-6">
       <Table>
@@ -40,9 +43,9 @@ export function Admin() {
             <TableCell>
               <HammerIcon className="h-6 w-6 text-[#b78c4a]" />
             </TableCell>
-            <TableCell className="font-medium">John Doe</TableCell>
-            <TableCell className="hidden md:table-cell">12345678</TableCell>
-            <TableCell className="hidden md:table-cell">$5,000.00</TableCell>
+            <TableCell className="font-medium">{person.userName}</TableCell>
+            <TableCell className="hidden md:table-cell">{person.userId}</TableCell>
+            <TableCell className="hidden md:table-cell">$12,345.67</TableCell>
             <TableCell>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>

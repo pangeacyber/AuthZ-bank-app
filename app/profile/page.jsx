@@ -38,10 +38,6 @@ function Profile() {
           <Row className="mb-5" data-testid="profile-json">
             <Highlight>{JSON.stringify(user, null, 2)}</Highlight>
           </Row>
-          <Row className='mb-3'>
-            <h2 data-testid="profile-name"> Your access level is</h2>
-          </Row>
-        
           <Toaster />
         </>
       )}

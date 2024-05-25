@@ -8,18 +8,19 @@ export default withPageAuthRequired(async function DeathStarDashboardPage() {
 
   const { user } = await getSession();
   console.log(user)
+  
 
   const roleCheckStatus = await checkRole(user.sub, 'create', "bank", "pango");
   const authZCheck = roleCheckStatus.allowed;
   //const authZCheck = true;
-
+  
   return (
     <>
     {authZCheck ?
       <div className="w-full pt-12 md:py-24 lg:py-15" data-testid="csr">
-        <Admin/>
+        <Admin person={{userName: user.name, userId: 'p-' +user.sub}}/>
       </div>
-    : <AccessDenied />
+    : <AccessDenied/>
   }
     </>
   );

@@ -21,28 +21,24 @@ import { Button } from "@/components/ui/button"
 
 export function Teller() {
   return (
-    <div className="flex h-screen w-full items-center justify-center bg-[url('/placeholder.svg?height=800&width=1200')] bg-cover bg-center">
+    <div className="flex h-screen w-full items-center justify-center bg-gradient-to-b from-amber-300 via-orange-500 to-blue-500 pt-20">
       <div className="relative mx-4 flex max-w-[800px] flex-col items-center rounded-lg bg-white/90 p-8 shadow-lg backdrop-blur-sm md:mx-0">
         <div className="absolute -top-8 flex h-16 w-16 items-center justify-center rounded-full bg-gray-900 text-white">
-          <BanknoteIcon className="h-8 w-8" />
+          <img src="Logo.png" className='h-12 w-12'/>
         </div>
         <div className="mt-8 flex w-full flex-col items-center justify-center">
           <div className="flex w-full flex-col items-center justify-center border-b border-gray-200 pb-6">
             <h2 className="text-2xl font-bold">Old West Bank</h2>
-            <p className="text-gray-500">Established 1872</p>
+            <p className="text-gray-500">Established 1800</p>
           </div>
           <div className="mt-6 flex w-full flex-col items-center justify-center">
             <div className="flex w-full flex-row items-center justify-between">
-              <div className="flex flex-col items-start">
-                <h3 className="text-lg font-bold">Teller Window</h3>
-                <p className="text-gray-500">Please approach the counter</p>
-              </div>
               <div className="flex flex-row items-center">
                 <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-full bg-gray-900 text-white">
                   <UserIcon className="h-6 w-6" />
                 </div>
                 <div className="flex flex-col items-start">
-                  <h4 className="text-lg font-bold">John Doe</h4>
+                  <h4 className="text-lg font-bold">Buck 'Wild Eye' Tibbs</h4>
                   <p className="text-gray-500">Teller</p>
                 </div>
               </div>
@@ -56,27 +52,6 @@ export function Teller() {
         </div>
       </div>
     </div>
-  )
-}
-
-function BanknoteIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <rect width="20" height="12" x="2" y="6" rx="2" />
-      <circle cx="12" cy="12" r="2" />
-      <path d="M6 12h.01M18 12h.01" />
-    </svg>
   )
 }
 
