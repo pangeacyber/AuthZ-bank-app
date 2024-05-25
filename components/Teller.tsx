@@ -39,7 +39,7 @@ export function Teller() {
                 </div>
                 <div className="flex flex-col items-start">
                   <h4 className="text-lg font-bold">Buck 'Wild Eye' Tibbs</h4>
-                  <p className="text-gray-500">Teller</p>
+                  <p className="text-gray-500">Customer</p>
                 </div>
               </div>
             </div>
