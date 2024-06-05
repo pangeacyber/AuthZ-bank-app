@@ -35,7 +35,7 @@ export function AccessDenied() {
       >
         Go Back
       </Link>
-      <div className="w-full h-40 relative"><iframe src="https://giphy.com/embed/xTiIzPbiiuTeaJ9U3u" width="100%" height="100%" className="giphy-embed absolute border-0" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/starwars-movie-star-wars-xTiIzPbiiuTeaJ9U3u">via GIPHY</a></p>
+      <div className="inline-flex items-center justify-center w-full h-40 relative"><iframe src="https://giphy.com/embed/alcf7hhlSTSfPYHKaJ" width="480" height="192" allowFullScreen></iframe></div>
     </div>
   )
 }
