@@ -49,6 +49,9 @@ AUTH0_AUDIENCE='YOUR_AUTH0_API_IDENTIFIER'
 # The permissions your app is asking for
 # OMIT if you do not want to use the API part of the sample
 AUTH0_SCOPE='openid profile email read:shows'
+#
+PANGEA_TOKEN='PANGEA DEFAULT TOKEN' 
+PANGEA_DOMAIN='PANGEA DOMAIN'
 ```
 
 **Note**: Make sure you replace `AUTH0_SECRET` with your own secret (you can generate a suitable string using `openssl rand -hex 32` on the command line).
