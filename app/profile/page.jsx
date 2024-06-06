@@ -1,14 +1,13 @@
 'use client';
 
 import React from 'react';
-import { Row, Col, Input, Label} from 'reactstrap';
+import { Row, Col} from 'reactstrap';
 import { useUser, withPageAuthRequired } from '@auth0/nextjs-auth0/client';
 
 import Loading from '../../components/Loading';
 import ErrorMessage from '../../components/ErrorMessage';
 import Highlight from '../../components/Highlight';
 import { Toaster } from '@/components/ui/toaster';
-import { toast } from '@/components/ui/use-toast';
 
 function Profile() {
   const { user, isLoading } = useUser();
@@ -49,34 +48,3 @@ export default withPageAuthRequired(Profile, {
   onRedirecting: () => <Loading />,
   onError: error => <ErrorMessage>{error.message}</ErrorMessage>
 });
-
-
-/*const onUpdateRole = async () => {
-  // send POST API request to /api/authz
-  fetch('/api/authz', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      'user_id': user.sub,
-      'role': 'crew_member',
-      'resource_type': 'ships', 
-      'resource_id': 'deathstar'
-    }),
-  })
-    .then(response => response.json())
-    .then(data => {
-      toast({
-        title: 'Role updated',
-        description: `User role updated to`
-      })
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-      toast({
-        title: 'Error updating Role',
-        description: `Not updated. Error ${error}`
-      })
-  });
-*/
