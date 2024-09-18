@@ -36,7 +36,7 @@
     "helmet": "^7.1.0",
     "highlight.js": "^11.10.0",
     "jwks-rsa": "^3.1.0",
-    "lucide-react": "^0.378.0",
+    "lucide-react": "^0.441.0",
     "morgan": "^1.10.0",
     "next": "^14.2.11",
     "nodemon": "^3.0.0",
