@@ -25,7 +25,7 @@ const NavBar = () => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div>
+    <div data-testid="navbar">
       <Navbar 
         expand="sm"
         className="p-0"

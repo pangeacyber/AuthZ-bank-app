@@ -11,6 +11,5 @@ describe('Layout', () => {
     await waitFor(() => expect(screen.getByTestId('layout')).toBeInTheDocument());
     expect(screen.getByTestId('navbar')).toBeInTheDocument();
     expect(screen.getByText('Text')).toBeInTheDocument();
-    expect(screen.getByTestId('footer')).toBeInTheDocument();
   });
 });

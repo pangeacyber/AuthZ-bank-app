@@ -1,0 +1,16 @@
+.git
+.github
+.next
+cypress
+node_modules
+tests
+
+.dockerignore
+.gitattributes
+.gitignore
+cypress.config.js
+*Dockerfile*
+exec.ps1
+exec.sh
+LICENSE.txt
+README.md

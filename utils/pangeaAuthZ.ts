@@ -1,5 +1,5 @@
 type RoleTypes = 'crew_member' | 'pilot' | 'stormtrooper' | 'owner';
-import { PangeaConfig, AuthZService, AuthZ } from "pangea-node-sdk";
+import { PangeaConfig, AuthZService, AuthZ, PangeaErrors } from "pangea-node-sdk";
 
 // Load client configuration from environment variables `PANGEA_AUDIT_TOKEN` and
 // `PANGEA_DOMAIN`.
@@ -20,8 +20,6 @@ const assignRole = async (userId: string, role: RoleTypes, resource: AuthZ.Resou
         ],
     });
 
-    console.log(response);
-
     return response.summary;
 }
 
@@ -35,8 +33,6 @@ const checkRole = async (userId: string, action: string, resource: string, page:
             subject: { type: 'user', id: userId },
         });
 
-        console.log(response.result);
-
         return response.result;
     } catch (error) {
         console.error(error);
@@ -47,14 +43,13 @@ const checkRole = async (userId: string, action: string, resource: string, page:
 const getRole = async (userId: string)=> {
     const authz = new AuthZService(token, config);
     try {
-        const response = await authz.tupleList({
+        await authz.tupleList({
             filter: {subject_id: userId},
             size:10
         })
-
     } catch (error) {
         console.error("Get Role Error:" + error);
-        console.error(error.pangeaResponse)
+        console.error((error as PangeaErrors.APIError).pangeaResponse)
         return false;
     }
 }

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { CardTitle, CardHeader, CardContent, Card } from "@/components/ui/card"
 import { TableHead, TableRow, TableHeader, TableCell, TableBody, Table } from "@/components/ui/table"
+import { SVGProps } from "react"
 
 export function BankAccount() {
   return (
@@ -91,7 +92,7 @@ export function BankAccount() {
   )
 }
 
-function BanknoteIcon(props) {
+function BanknoteIcon(props: Readonly<SVGProps<SVGSVGElement>>) {
   return (
     <svg
       {...props}
@@ -113,7 +114,7 @@ function BanknoteIcon(props) {
 }
 
 
-function SettingsIcon(props) {
+function SettingsIcon(props: Readonly<SVGProps<SVGSVGElement>>) {
   return (
     <svg
       {...props}

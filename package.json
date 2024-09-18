@@ -50,12 +50,12 @@
     "vaul": "^0.9.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.0",
-    "@testing-library/dom": "^9.0.1",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^14.1.0",
+    "@swc/core": "1.7.26",
+    "@swc/jest": "0.2.36",
+    "@testing-library/dom": "10.4.0",
+    "@testing-library/jest-dom": "6.5.0",
+    "@testing-library/react": "16.0.1",
     "autoprefixer": "^10.4.19",
-    "babel-jest": "^29.7.0",
     "cypress": "^12.7.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
@@ -68,14 +68,16 @@
   },
   "jest": {
     "testEnvironment": "jsdom",
-    "rootDir": "./",
-    "moduleNameMapper": {
-      ".(css)$": "identity-obj-proxy"
+    "transform": {
+      "^.+\\.(t|j)sx?$": "@swc/jest"
     },
-    "moduleFileExtensions": [
-      "js",
-      "jsx"
-    ],
+    "roots": ["<rootDir>"],
+    "modulePaths": ["."],
+    "extensionsToTreatAsEsm": [".ts", ".tsx"],
+    "moduleNameMapper": {
+      ".(css)$": "identity-obj-proxy",
+      "^@/(.*)": "<rootDir>/$1"
+    },
     "setupFiles": [
       "./tests/environment.js"
     ],
