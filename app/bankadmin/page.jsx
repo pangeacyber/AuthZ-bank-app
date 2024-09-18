@@ -5,15 +5,9 @@ import { checkRole } from '@/utils/pangeaAuthZ';
 import { AccessDenied } from '@/components/AccessDenied';
 
 export default withPageAuthRequired(async function DeathStarDashboardPage() {
-
   const { user } = await getSession();
-  console.log(user)
-  
-
   const roleCheckStatus = await checkRole(user.sub, 'delete', "bank", "pango");
   const authZCheck = roleCheckStatus.allowed;
-  //const authZCheck = true;
-  
   return (
     <>
     {authZCheck ?

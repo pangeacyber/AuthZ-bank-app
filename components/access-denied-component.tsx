@@ -8,11 +8,11 @@ export function AccessDeniedComponent() {
             <h1 className="text-4xl font-bold tracking-tight text-red-500">ACCESS DENIED</h1>
             <p className="text-gray-400">
               Unauthorized access to these facilities. Violators will be subject to immediate
-              termination by the sherrif.
+              termination by the sheriff.
             </p>
           </div>
           <div className="relative h-40 w-full">
-            <img alt="You're Not From Around these parts" className="object-contain" fill src="url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdDF6MzZxa2F3cWR4ZjZyZndkOHNjMjJrNGNieG55NWxkbHRsdjVnaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/m5B4JzuoIrrcbibbnc/giphy.gif')" />
+            <img alt="You're Not From Around these parts" className="object-contain" src="url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdDF6MzZxa2F3cWR4ZjZyZndkOHNjMjJrNGNieG55NWxkbHRsdjVnaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/m5B4JzuoIrrcbibbnc/giphy.gif')" />
           </div>
         </div>
       </div>
