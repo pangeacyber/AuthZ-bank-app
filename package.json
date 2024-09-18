@@ -30,7 +30,7 @@
     "concurrently": "^8.2.2",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
-    "eslint-config-next": "^14.2.3",
+    "eslint-config-next": "^14.2.11",
     "express": "^4.18.2",
     "express-jwt": "^8.0",
     "helmet": "^7.1.0",
