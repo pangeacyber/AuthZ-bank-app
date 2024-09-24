@@ -55,6 +55,7 @@
     "@testing-library/dom": "10.4.0",
     "@testing-library/jest-dom": "6.5.0",
     "@testing-library/react": "16.0.1",
+    "@types/react": "18.3.9",
     "autoprefixer": "^10.4.20",
     "cypress": "^13.14.2",
     "identity-obj-proxy": "^3.0.0",
@@ -71,9 +72,16 @@
     "transform": {
       "^.+\\.(t|j)sx?$": "@swc/jest"
     },
-    "roots": ["<rootDir>"],
-    "modulePaths": ["."],
-    "extensionsToTreatAsEsm": [".ts", ".tsx"],
+    "roots": [
+      "<rootDir>"
+    ],
+    "modulePaths": [
+      "."
+    ],
+    "extensionsToTreatAsEsm": [
+      ".ts",
+      ".tsx"
+    ],
     "moduleNameMapper": {
       ".(css)$": "identity-obj-proxy",
       "^@/(.*)": "<rootDir>/$1"
