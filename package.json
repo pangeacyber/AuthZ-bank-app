@@ -50,7 +50,7 @@
     "vaul": "^1.0.0"
   },
   "devDependencies": {
-    "@swc/core": "1.7.28",
+    "@swc/core": "1.7.35",
     "@swc/jest": "0.2.36",
     "@testing-library/dom": "10.4.0",
     "@testing-library/jest-dom": "6.5.0",
