@@ -1,4 +1,4 @@
-FROM node:lts-alpine@sha256:ad1aedbcc1b0575074a91ac146d6956476c1f9985994810e4ee02efd932a68fd AS build
+FROM node:lts-alpine@sha256:2145b76a5c24b7b1c1c0bca6d2b63e92c5c3dc08d514f77447ac32694c083dc8 AS build
 
 ENV NODE_ENV=development
 ENV NEXT_TELEMETRY_DISABLED=1
@@ -18,7 +18,7 @@ RUN npm prune --production
 
 # ---------------
 
-FROM node:lts-alpine@sha256:ad1aedbcc1b0575074a91ac146d6956476c1f9985994810e4ee02efd932a68fd
+FROM node:lts-alpine@sha256:2145b76a5c24b7b1c1c0bca6d2b63e92c5c3dc08d514f77447ac32694c083dc8
 
 ENV NODE_ENV=production
 ENV API_PORT=3001
