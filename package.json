@@ -38,7 +38,7 @@
     "jwks-rsa": "^3.2.0",
     "lucide-react": "^0.525.0",
     "morgan": "^1.10.1",
-    "next": "^14.2.30",
+    "next": "14.2.30",
     "nodemon": "^3.1.10",
     "pangea-node-sdk": "^5.1.0",
     "react": "^18.3.1",
@@ -50,7 +50,7 @@
     "vaul": "^1.1.2"
   },
   "devDependencies": {
-    "@swc/core": "1.13.0",
+    "@swc/core": "1.13.2",
     "@swc/jest": "0.2.39",
     "@testing-library/dom": "10.4.0",
     "@testing-library/jest-dom": "6.6.3",
